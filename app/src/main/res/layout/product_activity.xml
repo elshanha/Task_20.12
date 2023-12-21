@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.task_2012.features.newproduct.ProductViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:ignore="MissingConstraints"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".features.productlist.MainActivity"
+        android:padding="15dp"
+        >
+
+      <EditText
+          android:hint="@string/product_id"
+          android:id="@+id/txt_id"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          android:text="@={viewmodel.prdId}"
+
+          >
+
+      </EditText>
+
+        <EditText
+            android:hint="@string/product_name"
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_id"
+            android:text="@={viewmodel.prdName}"
+            >
+
+        </EditText>
+
+        <EditText
+            android:hint="@string/product_description"
+            android:id="@+id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@={viewmodel.prdDescription}"
+            >
+
+        </EditText>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/txt_description"
+            android:text="@string/add_prdct"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{()->viewmodel.onAddProduct()}"
+
+            >
+
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

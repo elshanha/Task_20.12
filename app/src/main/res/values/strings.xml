@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Task_20.12</string>
+    <string name="add_prdct">Add Product</string>
+    <string name="next_screen">Next Screen</string>
+    <string name="product_id">Product ID</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_description">Product Description</string>
+</resources>
